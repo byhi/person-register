@@ -1,7 +1,6 @@
 package hu.byhi.personregister.service;
 
 import hu.byhi.personregister.dto.PersonDto;
-import hu.byhi.personregister.entity.Person;
 
 import java.util.List;
 
