@@ -1,9 +1,6 @@
 package hu.byhi.personregister.entity;
 
 import jakarta.persistence.*;
-
-
-import java.util.List;
 import java.util.Set;
 
 @Entity(name = "Address")
@@ -16,14 +13,11 @@ public class Address {
     private String street;
     private Integer houseNumber;
 
-    @OneToMany(mappedBy = "mainAddress")
-    List<Person> mainperson;
-    @OneToMany(mappedBy = "tempAddress")
-    List<Person> tempPerson;
-
-
-
-    @OneToMany(mappedBy="address")
+    @OneToMany( cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinTable(name = "ADDRESS_CONTACT",
+            joinColumns = {@JoinColumn(name = "ADDRESS_FK")},
+            inverseJoinColumns = {@JoinColumn(name = "CONTACT_FK")}
+    )
     Set<Contact> contacts;
 
     public Long getId() {
@@ -66,19 +60,4 @@ public class Address {
         this.contacts = contacts;
     }
 
-    public List<Person> getMainperson() {
-        return mainperson;
-    }
-
-    public void setMainperson(List<Person> mainperson) {
-        this.mainperson = mainperson;
-    }
-
-    public List<Person> getTempPerson() {
-        return tempPerson;
-    }
-
-    public void setTempPerson(List<Person> tempPerson) {
-        this.tempPerson = tempPerson;
-    }
 }

@@ -51,4 +51,5 @@ public class AddressDto {
     public void setContacts(Set<ContactDto> contacts) {
         this.contacts = contacts;
     }
+
 }

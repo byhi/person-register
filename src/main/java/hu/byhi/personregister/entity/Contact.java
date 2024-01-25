@@ -8,13 +8,8 @@ public class Contact {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-
     private String phone;
     private String email;
-
-    @ManyToOne
-    @JoinColumn(name="address_id", nullable=false)
-    Address address;
 
     public Long getId() {
         return id;
@@ -40,11 +35,4 @@ public class Contact {
         this.email = email;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 }

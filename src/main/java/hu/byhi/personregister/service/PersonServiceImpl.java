@@ -1,7 +1,9 @@
 package hu.byhi.personregister.service;
 
 import hu.byhi.personregister.dto.PersonDto;
+import hu.byhi.personregister.entity.Person;
 import hu.byhi.personregister.mapper.PersonMapper;
+import hu.byhi.personregister.mapper.PersonMapperImpl;
 import hu.byhi.personregister.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,11 +15,10 @@ public class PersonServiceImpl implements PersonService{
 
     PersonRepository personRepository;
 
-    PersonMapper personMapper;
+    PersonMapper personMapper = new PersonMapperImpl();
 
     @Override
     public List<PersonDto> findAllPerson() {
-
         return personMapper.mapEntityListToDtoList(personRepository.findAll());
     }
 
@@ -28,7 +29,8 @@ public class PersonServiceImpl implements PersonService{
 
     @Override
     public void createPerson(PersonDto person) {
-        personRepository.save( personMapper.dtoToEntity(person));
+        Person p = personMapper.dtoToEntity(person);
+        personRepository.save(p );
     }
 
     @Override
@@ -46,8 +48,4 @@ public class PersonServiceImpl implements PersonService{
         this.personRepository = personRepository;
     }
 
-    @Autowired
-    public void setPersonMapper(PersonMapper personMapper) {
-        this.personMapper = personMapper;
-    }
 }
