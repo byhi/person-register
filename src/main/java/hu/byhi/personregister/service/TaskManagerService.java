@@ -1,5 +1,6 @@
 package hu.byhi.personregister.service;
 
+import hu.byhi.personregister.dto.TaskChangerRequestDto;
 import hu.byhi.personregister.dto.TaskDto;
 import java.util.List;
 
@@ -14,4 +15,5 @@ public interface TaskManagerService {
 
     TaskDto findTaskById(Long taskId);
 
+    void changeTaskByRequestDto(TaskChangerRequestDto dto);
 }
