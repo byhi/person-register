@@ -7,10 +7,12 @@ public class Person {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-
+    @Column(nullable = false)
     private String fullName;
 
-
+    @Column(columnDefinition = "boolean default false")
+    private Boolean employee;
+    @Column(nullable = false)
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_main_address", referencedColumnName = "id")
     Address mainAddress;
@@ -33,6 +35,14 @@ public class Person {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    public Boolean getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Boolean employee) {
+        this.employee = employee;
     }
 
     public Address getMainAddress() {

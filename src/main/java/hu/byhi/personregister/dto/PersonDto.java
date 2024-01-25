@@ -7,9 +7,11 @@ public class PersonDto {
 
     private String fullName;
 
-    AddressDto mainAddress;
+    private AddressDto mainAddress;
 
-    AddressDto tempAddress;
+    private AddressDto tempAddress;
+
+    private Boolean employee;
 
     public Long getId() {
         return id;
@@ -41,5 +43,13 @@ public class PersonDto {
 
     public void setTempAddress(AddressDto tempAddress) {
         this.tempAddress = tempAddress;
+    }
+
+    public Boolean getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Boolean employee) {
+        this.employee = employee;
     }
 }
