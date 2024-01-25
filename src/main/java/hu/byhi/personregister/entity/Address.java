@@ -9,10 +9,14 @@ public class Address {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false)
     private String city;
+    @Column(nullable = false)
     private String street;
+    @Column(nullable = false)
     private Integer houseNumber;
 
+    @Column(nullable = false)
     @OneToMany( cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name = "ADDRESS_CONTACT",
             joinColumns = {@JoinColumn(name = "ADDRESS_FK")},
