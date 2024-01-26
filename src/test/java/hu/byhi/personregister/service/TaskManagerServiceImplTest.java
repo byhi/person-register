@@ -1,6 +1,5 @@
 package hu.byhi.personregister.service;
 
-import hu.byhi.personregister.common.IssueState;
 import hu.byhi.personregister.dto.TaskChangerRequestDto;
 import hu.byhi.personregister.entity.Person;
 import hu.byhi.personregister.entity.Task;
@@ -12,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
