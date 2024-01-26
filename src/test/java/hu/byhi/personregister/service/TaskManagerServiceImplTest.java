@@ -39,7 +39,6 @@ class TaskManagerServiceImplTest {
     TaskChangerRequestDto requestDto;
     @BeforeEach
     public void init() {
-        MockitoAnnotations.openMocks(this);
         requestDto = new TaskChangerRequestDto();
         requestDto.setId(TASK_ID);
         requestDto.setAssignee(PERSON_ID);
