@@ -15,7 +15,6 @@ public class Issue {
     private String description;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "assignee_id", referencedColumnName = "id")
-    @Column(nullable = false)
     private Person createdBy;
 
     @Column(nullable = false)

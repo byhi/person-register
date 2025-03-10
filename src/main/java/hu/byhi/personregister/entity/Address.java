@@ -16,7 +16,6 @@ public class Address {
     @Column(nullable = false)
     private Integer houseNumber;
 
-    @Column(nullable = false)
     @OneToMany( cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name = "ADDRESS_CONTACT",
             joinColumns = {@JoinColumn(name = "ADDRESS_FK")},

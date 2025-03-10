@@ -10,11 +10,11 @@ public class Task {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    @Column(nullable = false)
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "issue_id", referencedColumnName = "id")
     private Issue issue;
-    @Column(nullable = false)
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Person customer;

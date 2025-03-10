@@ -61,7 +61,7 @@ public class TaskController {
 
     }
 
-    @PutMapping("/task")
+    @PutMapping("/task/change")
     public ResponseEntity<String> changeTask(@RequestBody TaskChangerRequestDto dto) {
         try {
             taskManagerService.changeTaskByRequestDto(dto);

@@ -1,7 +1,6 @@
 package hu.byhi.personregister.service;
 
 import hu.byhi.personregister.dto.PersonDto;
-import hu.byhi.personregister.entity.Person;
 import hu.byhi.personregister.mapper.PersonMapper;
 import hu.byhi.personregister.mapper.PersonMapperImpl;
 import hu.byhi.personregister.repository.PersonRepository;
@@ -29,8 +28,7 @@ public class PersonServiceImpl implements PersonService{
 
     @Override
     public void createPerson(PersonDto person) {
-        Person p = personMapper.dtoToEntity(person);
-        personRepository.save(p );
+        personRepository.save(personMapper.dtoToEntity(person));
     }
 
     @Override

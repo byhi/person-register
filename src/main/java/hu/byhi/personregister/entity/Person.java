@@ -10,9 +10,9 @@ public class Person {
     @Column(nullable = false)
     private String fullName;
 
-    @Column(columnDefinition = "boolean default false")
+    @Column(columnDefinition="bit default 0")
     private Boolean employee;
-    @Column(nullable = false)
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_main_address", referencedColumnName = "id")
     Address mainAddress;

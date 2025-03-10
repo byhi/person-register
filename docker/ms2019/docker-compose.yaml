@@ -1,0 +1,21 @@
+version: '3.7'
+ 
+services:
+    sqlserver1:
+        build: 
+          context: .
+          dockerfile: dockerfile
+        ports:  
+          - "15789:1433"
+        env_file:
+          - sqlserver.env
+        volumes: 
+          - sqlsystem:mssql
+          - sqldata:data
+          - sqllog:log
+          - sqlbackup:backup
+volumes:
+  sqlsystem:
+  sqldata:
+  sqllog:
+  sqlbackup:
